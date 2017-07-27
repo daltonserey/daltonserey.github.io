@@ -1,6 +1,6 @@
 ---
-layout: post
-title: De volta à web
+layout: default
+title: De volta à web...
 ---
 # De volta à web
 
