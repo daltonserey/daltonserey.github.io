@@ -8,3 +8,10 @@ description: |
 google_analytics: UA-103588711-1
 plugins:
   - jemoji
+
+defaults:
+    -
+        scope:
+            path: ""
+        values:
+            layout: default
