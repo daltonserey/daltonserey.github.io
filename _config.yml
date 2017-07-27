@@ -1,3 +1,8 @@
 theme: jekyll-theme-minimal
 title: Dalton Serey's Homepage
-description: I use this site to express my personal opinion with respect to my profession.
+description: |
+    I use this site to express my personal opinions, ideas and
+    thoughts. Please be considerate. It is
+    not unlikely I am wrong.
+
+google_analytics: UA-103588711-1
