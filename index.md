@@ -11,3 +11,11 @@ My academic interests are in teaching and researching computer
 programming and software engineering, with a focus on human and
 social aspects. I am a very impatient person and thus I prefer
 research that can be applied soon and as close to me as possible.
+
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
