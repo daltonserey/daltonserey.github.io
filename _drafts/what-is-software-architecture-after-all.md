@@ -159,3 +159,18 @@ We should also consider Brooks definition of architecture (see
 Mythical Man-Month). There he considers (as far a I remember)
 architecture as the user interface (or API) of a system. We
 should reread it.
+
+--
+
+Read
+
+* A unified framework for studying architectural decay of
+software systems, tese de doutorado de 2014 de Joshua Garcia da
+University of Southern California
+(http://digitallibrary.usc.edu/cdm/ref/collection/p15799coll3/id/463954)
+Citada por Crescêncio em sua qualificação de doutorado. Foi aluno
+de Nenad Medvidovic.
+
+* A comparative analysis of software architecture recovery
+techniques. J. Garcia, 2013. Int. Workshop of Program
+Comprehension.
