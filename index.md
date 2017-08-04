@@ -17,7 +17,7 @@ have potential to be applied soon and as close to me as possible.
 <ul>
   {% for post in site.posts %}
     <li>
-      <small><span style="color: gray;">{{ post.date | date: '%m%d%Y' }}</span></small>
+      <small><span style="color: gray;">{{ post.date | date: '%d/%m/%Y' }}</span></small>
       <a href="{{ post.url }}">{{ post.title }}</a>
     </li>
   {% endfor %}
