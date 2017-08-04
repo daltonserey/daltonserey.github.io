@@ -160,9 +160,16 @@ Mythical Man-Month). There he considers (as far a I remember)
 architecture as the user interface (or API) of a system. We
 should reread it.
 
+Can we recover architecture automatically? Well, according to the
+definition I gave, the short answer is no. Why not? Because
+architecture is a set of selected design decisions. Those
+decisions that are considered
+
 --
 
 Read
+
+* 4 + 1 architectural view: https://en.wikipedia.org/wiki/4%2B1_architectural_view_model
 
 * A unified framework for studying architectural decay of
 software systems, tese de doutorado de 2014 de Joshua Garcia da
