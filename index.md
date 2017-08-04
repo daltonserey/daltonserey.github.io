@@ -7,14 +7,17 @@ Brazil. I am also the director and one the the researchers of the
 [Software Practices
 Laboratory](http://splab.computacao.ufcg.edu.br/).
 
-My academic interests are in teaching and researching computer
-programming and software engineering, with a focus on human and
-social aspects. I am a very impatient person and thus I prefer
-research that can be applied soon and as close to me as possible.
+My academic interests are in computer programming, software
+engineering and, more recently, computers and education. Since I
+added computers and education to the list the focus of my
+interests have shifted towards human and social aspects. Also,
+because I am impatient I prefer research topics and projects that
+have potential to be applied soon and as close to me as possible.
 
 <ul>
   {% for post in site.posts %}
     <li>
+      <small><span style="color: gray;">{{ post.date | date: '%m%d%Y' }}</span></small>
       <a href="{{ post.url }}">{{ post.title }}</a>
     </li>
   {% endfor %}
