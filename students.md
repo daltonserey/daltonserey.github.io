@@ -8,7 +8,7 @@
 
 <ul>
   {% for student in site.data.students %}
-    <li> {{ student }} </li>
+    <li> {{ student.name }} </li>
   {% endfor %}
 </ul>
 
