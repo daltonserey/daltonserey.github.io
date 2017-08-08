@@ -7,7 +7,7 @@
 ## Graduated PhD Students
 
 <ul>
-  {% for student in site.data.students %}
+  {% for student in site.data.students.graduated_phd_students %}
     <li> {{ student.name }} </li>
   {% endfor %}
 </ul>
