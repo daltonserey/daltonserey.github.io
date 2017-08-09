@@ -6,7 +6,7 @@
 
 ## Graduated PhD Students
 
-{% for student in site.data.students.graduated_phd_students %}
+{% for student in site.data.students.graduated_phd %}
     <p> 
         {{ student.name }} <br>
         {% for person in student.cosupervisors %}
