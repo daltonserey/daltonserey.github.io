@@ -17,3 +17,14 @@
 
 
 ## Graduated Master Students
+
+{% for student in site.data.students.graduated_master %}
+<p> 
+  {{ student.name }} <br>
+  {% for person in student.cosupervisors %}
+    <small>{{ person }}</small>
+  {% endfor %}
+</p>
+{% endfor %}
+
+
