@@ -6,11 +6,14 @@
 
 ## Graduated PhD Students
 
-<ul>
-  {% for student in site.data.students.graduated_phd_students %}
-    <li> {{ student.name }} </li>
-  {% endfor %}
-</ul>
+{% for student in site.data.students.graduated_phd_students %}
+    <p> 
+        {{ student.name }} <br>
+        {% for person in student.cosupervisors %}
+            <small>{{ person }}</small>
+        {% endfor %}
+    </p>
+{% endfor %}
 
 
 ## Graduated Master Students
