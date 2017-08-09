@@ -1,38 +1,105 @@
-graduated_master_students:
-- name: Afrânio Mangueira Lima de Assis (co-supervised with Jorge)
-- name: Amanda Saraiva Bezerra 
-- name: Ana Emília Victor Barbosa 
-- name: André Luiz Lima de Figueiredo (co-supervised with Patrícia Machado)
-- name: Diego Tavares (co-supervisded with Jorge)
-- name: Edigley Pereira Fraga (cosupervised with Francisco Brasileiro)
-- name: Elthon Allex da S. Oliveira (co-supervised with Jorge)
-- name: Erick (co-supervisded with Lívia)
-- name: Fabrício Vale de Azevedo Guerra (co-supervised with Jorge)
-- name: Giovanni Farias (co-supervisded with Raquel Lopes)
-- name: Gustavo Araújo Soares (co-supervised with Rohit Gheyi)
-- name: Izabella (co-supervisded with Marco Túlio / UFMG)
-- name: José Amancio Macedo Santos (co-supervised with Jorge)
-- name: João Arthur (co-supervisded with Jorge)
-- name: Jucelio (co-supervisded with Jorge)
-- name: Klaudio (co-supervisded with Jorge)
+graduated_master:
+- name: Afrânio Mangueira Lima de Assis
+  cosupervisors: [Jorge Figueiredo]
+
+- name: Amanda Saraiva Bezerra
+  cosupervisors: [Jorge Figueiredo]
+
+- name: Ana Emília Victor Barbosa
+  cosupervisors: [Jorge Figueiredo]
+
+- name: André Luiz Lima de Figueiredo
+  cosupervisors: [Patrícia Machado]
+
+- name: Diego Cavalcanti Tavares
+  cosupervisors: [Jorge Figueiredo]
+
+- name: Edigley Pereira Fraga
+  cosupervisors: [Fracisco Brasileiro]
+
+- name: Elthon Allex da S. Oliveira
+  cosupervisors: [Jorge Figueiredo]
+
+- name: Erick John Fidelis Costa 
+  cosupervisors: [Lívia Sampaio]
+
+- name: Fabrício Vale de Azevedo Guerra
+  cosupervisors: [Jorge Figueiredo]
+
+- name: Giovanni Farias
+  cosupervisors: [Raquel Lopes]
+
+- name: Gustavo Araújo Soares
+  cosupervisors: [Rohit Gheyi]
+
+- name: Izabela Vanessa Almeida Melo
+  cosupervisors: [Marco Túlio / UFMG]
+
+- name: José Amancio Macedo Santos
+  cosupervisors: [Jorge Figueiredo]
+
+- name: João Arthur Brunnet Monteiro
+  cosupervisors: [Jorge Figueiredo]
+
+- name: Jucelio Soares dos Santos
+  cosupervisors: [Jorge Figueiredo]
+
+- name: Klaudio Mascarenhas
+  cosupervisors: [Jorge Figueiredo]
+
 - name: Lile Palma Hattori 
-- name: Luiz (co-supervisded with Jorge)
+  cosupervisors: [Jorge Figueiredo]
+
+- name: Luiz Augusto Morais 
+  cosupervisors: [Jorge Figueiredo]
+
 - name: Mariana Romão
-- name: Mirna Carelli (co-supervised with Jorge)
-- name: Paulo Eduardo e Silva Barbosa (co-supervised with Jorge)
-- name: Rodrigo Rocha (co-supervised with Jorge)
-- name: Rogério Dourado Silva Júnior (co-supervised with Jorge)
+  cosupervisors: [Jorge Figueiredo]
+
+- name: Mirna Carelli
+  cosupervisors: [Jorge Figueiredo]
+
+- name: Paulo Eduardo e Silva Barbosa
+  cosupervisors: [Jorge Figueiredo]
+
+- name: Rodrigo Rocha
+  cosupervisors: [Jorge Figueiredo]
+
+- name: Rogério Dourado Silva Júnior
+  cosupervisors: [Jorge Figueiredo]
+
 - name: Sabrina de F. Souto
-- name: Sebastião E. P. Rabelo Júnior (co-supervised with Franklin Ramalho)
-- name: Taciano de Morais Silva (co-supervised with Jorge)
-- name: Vicente (co-supervised with Roberta Coelho / UFRN)
-- name: Waldemar Neto (co-supervised with Franklin Ramalho)
+
+- name: Sebastião E. P. Rabelo Júnior
+  cosupervisors: [Franklin Ramalho]
+
+- name: Taciano de Morais Silva
+  cosupervisors: [Jorge Figueiredo]
+
+- name: Vicente Neto
+  cosupervisors: [Roberta Coelho]
+
+- name: Waldemar Neto
+  cosupervisors: [Franklin Ramalho]
 
 
-graduated_phd_students:
-- name: Roberto Bittencourt (co-supervised with Gail Murphy /UBC)
-- name: Cássio (co-supervised with Jorge)
-- name: Katyusco (co-supervised with Jorge)
-- name: Andréa P. Mendonça (co-supervised with Evandro)
-- name: João Arthur (co-supervised with Jorge)
-- name: Matheus Gaudêncio (co-supervised with Ayla Dantas)
+
+graduated_phd:
+- name: Andréa P. Mendonça
+  cosupervisors: [Evandro Costa / UFAL]
+
+- name: Cássio Leonardo Rodrigues
+  cosupervisors: [Jorge Figueiredo]
+
+- name: João Arthur Brunnet Monteiro
+  cosupervisors: [Jorge Figueiredo]
+
+- name: Katyusco de Farias Santos
+  cosupervisors: [Jorge Figueiredo]
+
+- name: Matheus Gaudêncio
+  cosupervisors: [Ayla Dantas Rebouças / UFPB]
+
+- name: Roberto Bittencourt
+  cosupervisors: [Gail Murphy / UBC]
+
