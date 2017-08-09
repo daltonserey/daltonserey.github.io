@@ -10,9 +10,9 @@ Laboratory](http://splab.computacao.ufcg.edu.br/).
 My academic interests are in computer programming, software
 engineering and, more recently, computers and education. Since I
 added computers and education to the list the focus of my
-interests have shifted towards human and social aspects. Also,
-because I am impatient I prefer research topics and projects that
-have potential to be applied soon and as close to me as possible.
+interests have shifted towards human and social aspects.
+Because I am impatient I prefer research topics and projects that
+can be applied as soon and as close to me as possible.
 
 <ul>
   {% for post in site.posts %}
