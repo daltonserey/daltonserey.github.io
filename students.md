@@ -10,7 +10,7 @@
 <p> 
   {{ student.name }} <br>
   {% for person in student.cosupervisors %}
-    <span style="color: gray; font-size: small">Co-supervised with {{ person }}</span>
+    <span style="color: lightgray; font-size: x-small">Co-supervised with {{ person }}</span>
   {% endfor %}
 </p>
 {% endfor %}
@@ -22,7 +22,7 @@
 <p> 
   {{ student.name }} <br>
   {% for person in student.cosupervisors %}
-    <span style="color: gray; font-size: small">Co-supervised with {{ person }}</span>
+    <span style="color: lightgray; font-size: x-small">Co-supervised with {{ person }}</span>
   {% endfor %}
 </p>
 {% endfor %}
