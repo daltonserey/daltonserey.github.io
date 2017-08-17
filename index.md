@@ -15,6 +15,8 @@ was the other way around?). Because I am impatient I prefer
 research topics and projects that can be applied as soon and as
 close to me as possible.
 
+[Students](/students)
+
 <ul>
   {% for post in site.posts %}
     <li>
