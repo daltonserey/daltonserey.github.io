@@ -5,6 +5,8 @@ description: |
     thoughts. Please be considerate. It is
     not unlikely I am wrong.
 
+    <small><a href="/students">Students</a></small>
+
 google_analytics: UA-103588711-1
 plugins:
   - jemoji

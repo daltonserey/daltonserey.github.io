@@ -1,105 +1,166 @@
+current_phd:
+- name: Eliane Araújo
+  cosupervisors: [Jorge Figueiredo / UFCG]
+  location: Professora / UFCG
+
+- name: Ana Liz Souto Oliveira
+  cosupervisors: [Wilkerson Andrade / UFCG]
+  location: Professora / UFPB
+
+- name: Mirna Carelli
+  cosupervisors: [Jorge Figueiredo / UFCG]
+  location: Professora / IFPB
+
+- name: Antônio Júnior
+  cosupervisors: [Jorge Figueiredo / UFCG]
+  location: Professor / IFPB
+
+- name: Fabrício Vale de Azevedo Guerra
+  cosupervisors: [Jorge Figueiredo / UFCG]
+  location: Professor / UFRN
+
+- name: Taciano de Morais Silva
+  cosupervisors: [Jorge Figueiredo / UFCG]
+  location: Professor / UFRN
+
+
+current_master:
+- name: Bruno Dias
+  cosupervisors: [João Arthur Brunnet Monteiro / UFCG]
+  location: Softwatre Development Manager / e-Pol / SPLab / UFCG
+
+- name: Sormany Dantas
+  cosupervisors: [Jorge Figueiredo / UFCG]
+
+- name: Achiles Luciano
+  cosupervisors: [Wilkerson Andrade / UFCG]
+
+- name: Rafael Pontes
+  cosupervisors: [Jorge Figueiredo / UFCG]
+
+
+graduated_phd:
+- name: Katyusco de Farias Santos
+  cosupervisors: [Jorge Figueiredo / UFCG]
+  graduated_at: 2015-03-10
+  location: Professor / IFPB
+
+- name: Matheus Gaudêncio
+  cosupervisors: [Ayla Dantas Rebouças / UFPB]
+  graduated_at: 2015-09-14
+  location: Professor / UFCG
+
+- name: João Arthur Brunnet Monteiro
+  cosupervisors: [Jorge Figueiredo / UFCG]
+  graduated_at: 2014-07-11
+  location: Professor / UFCG
+
+- name: Roberto Bittencourt
+  cosupervisors: [Gail Murphy / UBC]
+  graduated_at: 2012-02-29
+  location: Professor / UEFS
+
+- name: Andréa P. Mendonça
+  cosupervisors: [Evandro Costa / UFAL]
+  graduated_at: 2010-11-30
+  location: Professora / IFAM
+
+- name: Cássio Leonardo Rodrigues
+  cosupervisors: [Jorge Figueiredo / UFCG]
+  graduated_at: 2010-04-14
+  location: Professor / UFGO
+
+
+
 graduated_master:
 - name: Afrânio Mangueira Lima de Assis
-  cosupervisors: [Jorge Figueiredo]
+  cosupervisors: [Jorge Figueiredo / UFCG]
 
 - name: Amanda Saraiva Bezerra
-  cosupervisors: [Jorge Figueiredo]
+  cosupervisors: [Jorge Figueiredo / UFCG]
 
 - name: Ana Emília Victor Barbosa
-  cosupervisors: [Jorge Figueiredo]
+  cosupervisors: [Jorge Figueiredo / UFCG]
 
 - name: André Luiz Lima de Figueiredo
-  cosupervisors: [Patrícia Machado]
+  cosupervisors: [Patrícia Machado / UFCG]
+
+- name: Cássio Leonardo Rodrigues
+  cosupervisors: [Jorge Figueiredo / UFCG]
 
 - name: Diego Cavalcanti Tavares
-  cosupervisors: [Jorge Figueiredo]
+  cosupervisors: [Jorge Figueiredo / UFCG]
 
 - name: Edigley Pereira Fraga
-  cosupervisors: [Fracisco Brasileiro]
+  cosupervisors: [Fracisco Brasileiro / UFCG]
 
 - name: Elthon Allex da S. Oliveira
-  cosupervisors: [Jorge Figueiredo]
+  cosupervisors: [Jorge Figueiredo / UFCG]
 
 - name: Erick John Fidelis Costa 
   cosupervisors: [Lívia Sampaio]
 
 - name: Fabrício Vale de Azevedo Guerra
-  cosupervisors: [Jorge Figueiredo]
+  cosupervisors: [Jorge Figueiredo / UFCG]
 
 - name: Giovanni Farias
-  cosupervisors: [Raquel Lopes]
+  cosupervisors: [Raquel Lopes / UFCG]
 
 - name: Gustavo Araújo Soares
-  cosupervisors: [Rohit Gheyi]
+  cosupervisors: [Rohit Gheyi / UFCG]
 
 - name: Izabela Vanessa Almeida Melo
   cosupervisors: [Marco Túlio / UFMG]
 
+- name: Jemerson Damásio
+  cosupervisors: [Jorge Figueiredo / UFCG]
+
 - name: José Amancio Macedo Santos
-  cosupervisors: [Jorge Figueiredo]
+  cosupervisors: [Jorge Figueiredo / UFCG]
 
 - name: João Arthur Brunnet Monteiro
-  cosupervisors: [Jorge Figueiredo]
+  cosupervisors: [Jorge Figueiredo / UFCG]
 
 - name: Jucelio Soares dos Santos
-  cosupervisors: [Jorge Figueiredo]
+  cosupervisors: [Jorge Figueiredo / UFCG]
 
-- name: Klaudio Mascarenhas
-  cosupervisors: [Jorge Figueiredo]
+- name: Klaudio Henrique Medeiros
+  cosupervisors: [Jorge Figueiredo / UFCG]
 
 - name: Lile Palma Hattori 
-  cosupervisors: [Jorge Figueiredo]
+  cosupervisors: [Jorge Figueiredo / UFCG]
 
 - name: Luiz Augusto Morais 
-  cosupervisors: [Jorge Figueiredo]
+  cosupervisors: [Jorge Figueiredo / UFCG]
 
 - name: Mariana Romão
-  cosupervisors: [Jorge Figueiredo]
+  cosupervisors: [Jorge Figueiredo / UFCG]
 
 - name: Mirna Carelli
-  cosupervisors: [Jorge Figueiredo]
+  cosupervisors: [Jorge Figueiredo / UFCG]
+
+- name: Pablo Oliveira Antonino de Assis
+  cosupervisors: [Jorge Figueiredo / UFCG]
 
 - name: Paulo Eduardo e Silva Barbosa
-  cosupervisors: [Jorge Figueiredo]
+  cosupervisors: [Jorge Figueiredo / UFCG]
 
 - name: Rodrigo Rocha
-  cosupervisors: [Jorge Figueiredo]
+  cosupervisors: [Jorge Figueiredo / UFCG]
 
 - name: Rogério Dourado Silva Júnior
-  cosupervisors: [Jorge Figueiredo]
+  cosupervisors: [Jorge Figueiredo / UFCG]
 
 - name: Sabrina de F. Souto
 
 - name: Sebastião E. P. Rabelo Júnior
-  cosupervisors: [Franklin Ramalho]
+  cosupervisors: [Franklin Ramalho / UFCG]
 
 - name: Taciano de Morais Silva
-  cosupervisors: [Jorge Figueiredo]
+  cosupervisors: [Jorge Figueiredo / UFCG]
 
 - name: Vicente Neto
-  cosupervisors: [Roberta Coelho]
+  cosupervisors: [Roberta Coelho / UFRN]
 
 - name: Waldemar Neto
-  cosupervisors: [Franklin Ramalho]
-
-
-
-graduated_phd:
-- name: Andréa P. Mendonça
-  cosupervisors: [Evandro Costa / UFAL]
-
-- name: Cássio Leonardo Rodrigues
-  cosupervisors: [Jorge Figueiredo]
-
-- name: João Arthur Brunnet Monteiro
-  cosupervisors: [Jorge Figueiredo]
-
-- name: Katyusco de Farias Santos
-  cosupervisors: [Jorge Figueiredo]
-
-- name: Matheus Gaudêncio
-  cosupervisors: [Ayla Dantas Rebouças / UFPB]
-
-- name: Roberto Bittencourt
-  cosupervisors: [Gail Murphy / UBC]
-
+  cosupervisors: [Franklin Ramalho / UFCG]
