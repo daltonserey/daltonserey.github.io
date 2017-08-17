@@ -1,11 +1,9 @@
 theme: jekyll-theme-minimal
 title: Dalton Serey's Homepage
 description: |
-    I use this site to express my personal opinions, ideas and
-    thoughts. Please be considerate. It is
+    This site expresses my personal opinions, ideas and
+    thoughts. Hence, please be considerate. It is
     not unlikely I am wrong.
-
-    <small><a href="/students">Students</a></small>
 
 google_analytics: UA-103588711-1
 plugins:
