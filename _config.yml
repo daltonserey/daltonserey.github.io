@@ -5,8 +5,6 @@ description: |
     thoughts. Hence, please be considerate. It is
     not unlikely I am wrong.
 
-    <small>Last modified at: {{ site.time }}</small>
-
 google_analytics: UA-103588711-1
 plugins:
   - jemoji
