@@ -17,7 +17,8 @@ was the other way around?). Because I am impatient I prefer
 research topics and projects that can be applied as soon and as
 close to me as possible.
 
-[Students](/students)
+* [Students](/students)
+* [Programação 3 (2017.2)](/prog3-20172)
 
 <ul>
   {% for post in site.posts %}
