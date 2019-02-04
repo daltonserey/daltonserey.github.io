@@ -66,7 +66,7 @@
     <span style="color: #b0b0b0">({{ student.location }})</span>
   {% endif %}
   {% if student.document  %}
-    <span style="color: #b0b0b0"><a href="{{student.document}}">tese</a></span>
+    <span style="color: #b0b0b0"><a href="/teses/{{student.document}}">(dissertação)</a></span>
   {% endif %} <br>
 
   {% for person in student.cosupervisors %}
