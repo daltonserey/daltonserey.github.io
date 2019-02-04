@@ -64,9 +64,9 @@
 <p style="margin-left: 2em; margin-bottom: 8px;"> 
   {{ student.name }} {% if student.location  %}
     <span style="color: #b0b0b0">({{ student.location }})</span>
-  {% endif %} <br>
+  {% endif %}
   {% if student.document  %}
-    <span style="color: #b0b0b0">({{ student.document }})</span>
+    <span style="color: #b0b0b0"><a href="{{student.document}}">tese</a></span>
   {% endif %} <br>
 
   {% for person in student.cosupervisors %}
