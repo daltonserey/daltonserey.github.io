@@ -3,3 +3,11 @@ title: Dalton Serey's Homepage
 description: |
     Este site reúne textos escritos para meus alunos, nas
     disciplinas do Curso de Ciência da Computação.
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
