@@ -2,4 +2,4 @@
 
 ## Unidade 1
 
-- [O que é um computador?](0-que-eh-um-computador)
+- [O que é um computador?](0-o-que-eh-um-computador)
