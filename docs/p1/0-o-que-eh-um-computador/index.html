@@ -3,62 +3,47 @@
   <head>
     <title>Title</title>
     <meta charset="utf-8">
-    <style>
-      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
-      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
-
-      body { font-family: 'Droid Serif'; }
-      h1, h2, h3 {
-        font-family: 'Yanone Kaffeesatz';
-        font-weight: normal;
-      }
-      blockquote {
-        font-style: italic;
-        border-left: 10px blue solid;
-        padding-left: 20px;
-      }
-      .quote-green {
-        font-size: 120%;
-        font-style: italic;
-        border-left: 10px green solid;
-        padding-left: 20px;
-      }
-      .remark-code, .remark-inline-code { 
-        font-family: 'Ubuntu Mono';
-      }
-      pre {
-        background: #ccf;
-        padding: 10px;
-        font-size: 80%;
-        border-radius: 6px;
-      }
-
-      .bblue {
-        color: blue;
-        font-weight: bold;
-      }
-
-      .green {
-        color: green;
-        font-weight: bold;
-      }
-
-      .bred {
-        color: red;
-        font-weight: bold;
-      }
-
-      .insert {
-        background: green;
-      }
-
-    </style>
+    <link rel="stylesheet" href="../css/slides.css">
   </head>
   <body>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
     <script>
-      var slideshow = remark.create({sourceUrl: 'slides.md'});
+      function main() {
+        // get url params
+        let params = new URLSearchParams(document.location.search);
+
+        // if page is in iframe scroll only if url explicitly requires scroll
+        let scroll = window.location === window.parent.location || params.get("scroll") == 'yes';
+
+        var slideshow = remark.create({
+          sourceUrl: 'slides.md',
+          navigation: {
+            scroll: scroll,
+            click: true
+          }
+        });
+
+        let paramSlides = params.get("slides");
+        if (!paramSlides) {
+          return;
+        }
+
+        let  slides = params.get("slides").split(",").map(e => Number(e));
+        let _idx_current = -1;
+        function nextSlide(slide) {
+          if (!slide) {
+            _idx_current = (_idx_current + 1) % slides.length;
+            slide = slides[_idx_current];
+          }
+          setTimeout(() => { slideshow.gotoSlide(slide); }, 0);
+          setTimeout(nextSlide, params.get("tempo") || 2000);
+        }
+
+        nextSlide();
+      }
+
+      main();
+
     </script>
   </body>
 </html>
