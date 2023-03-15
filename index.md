@@ -16,4 +16,4 @@ bastante impaciente, prefiro temas e projetos de pesquisa cuja
 aplicação seja possível em breve e, de preferência, por perto.
 
 * [Alguns de meus estudantes](/students)
-* [Material de Curso de Programação I](/prog1)
+* [Material de Curso de Programação I](/p1)
