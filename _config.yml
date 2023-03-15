@@ -1,9 +1,8 @@
 remote_theme: mmistakes/minimal-mistakes
 title: Dalton Serey's Homepage
 description: |
-    This site expresses my personal opinions, ideas and
-    thoughts. Hence, please be considerate. It is
-    not unlikely I am wrong.
+    Este site reúne textos escritos para meus alunos, nas
+    disciplinas do Curso de Ciência da Computação.
 
 google_analytics: UA-103588711-1
 plugins:
