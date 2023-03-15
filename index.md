@@ -2,18 +2,18 @@
 ---
 # Dalton Serey, Computação@UFCG
 
-I am a professor in the [Computer Science
-Department](http://www.computacao.ufcg.edu.br) at the
+Eu sou professor da [Unidade de Sistemas e
+Computação](http://www.computacao.ufcg.edu.br) da
 [Universidade Federal de Campina Grande](http://www.ufcg.edu.br),
-Brazil. I am a former director and now one the researchers of the
-[Software Practices
+Brazil, lotado no [Software Practices
 Laboratory](http://splab.computacao.ufcg.edu.br/).
 
-My academic interests are in computer programming, programming
-languages, concurrent and parallel programming and computation,
-software engineering and computers and education. I am quite
-impatient and therefore I prefer research topics and projects
-that can be applied as soon and as close to me as possible.
+Meus interesses acadêmicos são a programação de computadores,
+linguagens de programação, programação concorrente, computação
+paralela e de sistemas distribuídos,
+engenharia de software e, por fim, computação e educação. Por ser
+bastante impaciente, prefiro temas e projetos de pesquisa cuja
+aplicação seja possível em breve e, de preferência, por perto.
 
-* [Students](/students)
+* [Alguns de meus estudantes](/students)
 * [Material de Curso de Programação I](/prog1)
