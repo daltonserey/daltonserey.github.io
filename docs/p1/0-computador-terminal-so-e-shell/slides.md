@@ -9,24 +9,6 @@ class: center, middle, nonum
 
 
 ---
-# plano da aula
-
-O ambiente Unix de programação. Uso do computador via shell e
-terminal. Introdução ao Bash.
-
-Terminal X shell. O que são comandos? Exemplos de comandos
-simples: id, cal, echo (screenfetch quando precisar instalar). Comandos internos e externos.
-type. Programas vs processos. ps. kill. ls. Sistema de arquivos.
-Navegação e gerência do sistema de arquivos.  pwd. cd. mkdir.
-tree. ytree. mc. Comandos de tela cheia: top, htop, man, algum game pacman,
-less e more. Comandos com argumentos. Editores de texto.
-nano. vi. Comandos são arquivos. which. Variáveis de ambiente.
-PATH. USER. HOME. PATH. O prompt. PS1. alias. O arquivo .bashrc
-de configuração do Bash.
-
-Introdução ao uso do vi.
-
----
 class: center middle
 <img src="imagens/notebook.jpg" width="20%">
 
