@@ -4,3 +4,4 @@
 
 - [O que é um computador? (slides da aula)](0-o-que-eh-um-computador){target=_blank}
 - [Computador, terminal, SO e Shell (slides da aula)](0-computador-terminal-so-e-shell){target=_blank}
+- [Comandos essenciais do Bash (slides/roteiro)](0-comandos-essenciais-do-bash){target=_blank}
