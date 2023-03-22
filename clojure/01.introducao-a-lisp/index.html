@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Introdução a Lisp</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <script type="module" src="../js/componentes.js"></script>
+  <link rel="stylesheet" href="../css/texto.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="introdução-a-lisp">Introdução a Lisp</h1>
+<address class="author">
+<p>
+©2023 <a rel="author" href="https://daltonserey.github.io/">Dalton
+Serey</a><br> Computação @ UFCG
+</p>
+</address>
+<p><a href="slides.html" target="_blank">Slides da aula</a></p>
+<p><my-slide src="slides.html#1" class="float-and-shrink-right">
+</my-slide> Quando se trata de linguagens de programação, Lisp é quase a
+definição de <em>minimalismo</em>: tem sintaxe e semântica que cabem em
+uma única página; promove a escrita de programas com base em um único
+conceito de linguagem; e usa a mesma estrutura de dados com que
+representa os dados que manipula e os próprios programas escritos na
+lingugagem. E é exatamente por isso que os conceitos fundamentais de
+Lisp podem ser apresentados em poucos minutos. Esse é o objetivo desta
+aula. Veremos um brevíssimo histórico de Lisp e, logo em seguida, sua
+sintaxe e semântica, seguida de alguns pequenos exemplos de
+programas.</p>
+<section>
+<h2 id="um-pouco-de-contexto-histórico">Um pouco de contexto
+histórico</h2>
+<p><my-slide src="slides.html#2" class="float-and-shrink-right"></my-slide>
+Lisp significa, literalmente, <em>processador de listas</em>. Imagino
+que o nome possa despertar certa curiosidade e até algum espanto.
+Afinal, não é fato que toda linguagem processa listas? O que há de tão
+especial nisso?</p>
+<p>Para entender o que motivou o nome de Lisp precisamos de um pouco de
+contexto histórico. E, sim!, saber o que motivou a escolha do nome da
+linguagem ajuda a entender a linguagem em si. Então peço que exercite um
+pouco sua paciência e continue lendo.</p>
+<p><img src="images/fortran-cover.png"
+style="float:left; margin: 0 1em 1em 0;" width="210"
+alt="Capa de Fortran" /> A época a que me refiro é o final dos anos
+1950, logo após a segunda grande guerra e início da guerra fria. Na
+computação, era o momento da criação das primeiras linguagens de
+programação. A primeira versão da primeira linguagem de programação de
+alto nível, Fortran, foi publicada pela IBM em 1957, para o <a
+href="https://en.wikipedia.org/wiki/IBM_704">IBM 704</a>. Nessa época,
+apenas instituições governamentais, grandes universidades e grandes
+empresas podiam arcar com os custos de ter computadores. De fato,
+estima-se que apenas algumas centenas de computadores existia no mundo.
+Além disso, as aplicações eram essencialmente voltadas para grandes
+problemas de engenharia espacial, militar e/ou química. Os computadores
+eram essencialmente super calculadoras e as linguagens da época eram
+voltadas para atender a essa demanda. É o que chamamos hoje de
+<em>computação numérica</em>.</p>
+<p><img src="images/lisp-cover.png"
+style="float:right; margin: 0 0 1em 1em;" width="210"
+alt="Capa de Lisp" /> Lisp foi criada por <a
+href="https://en.wikipedia.org/wiki/John_McCarthy_(computer_scientist)">John
+McCarthy</a> em 1958, apenas um ano após a criação de Fortran. McCarthy,
+contudo, desenvolveu Lisp com o propósito de criar aplicações
+significativamente diferentes das que eram feitas naquela época: ele
+queria viabilizar o desenvolvimento de aplicações de <em>Inteligência
+Artificial</em> (termo que, por sinal, foi criado pelo próprio McCarthy
+para o famoso Workshop de Dartmouth, de 1956 em que reuniu os cientistas
+que hoje são chamados de <em>pais fundadores da IA</em>). McCarthy
+percebeu que a natureza dos dados e das computações necessárias na IA
+não eram de natureza numérica, mas <em>simbólica</em>.</p>
+<figure>
+<img src="images/ai-founding-fathers.png"
+style="margin: 0;;width:100.0%" alt="Pais fundadores da IA" />
+<figcaption aria-hidden="true">Pais fundadores da IA</figcaption>
+</figure>
+<p>McCarthy percebeu que os dados com os quais a IA precisava trabalhar
+são <em>não numéricos</em>. Tanto os dados de partida (ou de entrada, se
+você preferir), como os dados intermediários (representações internas),
+e até os dados resultantes (ou saídas) das computações da IA podem ser,
+tipicamente, expressos como <em>sequências de símbolos</em>. Pense, por
+exemplo, em aplicações capazes de resolver equações algébricas passo a
+passo. Ou que qsejam capazes de fazer provas de teoremas matemáticos. Ou
+de jogar xadrez e/ou outros jogos que requerem <em>inteligência</em>. Ou
+ainda de processar e produzir texto em linguagem natural. Como você
+representaria os dados? Claramente, nenhuma dessas aplicações requer
+cálculo numérico no sentido em que o valor resultante esperado é a mera
+aplicação de uma sequencia de cálculos predefinidos. De fato, muitas
+vezes não há dados numéricos a processar. Por exemplo, equações podem
+ser meramente literais e podem ser resolvidas apenas reescrevendo as
+expressões originais e combinando-as a outras até que se chegue a certas
+<em>formas específicas</em>, aceitas como a solução almejada.</p>
+<strong>Listas como estruturas de dado</strong> McCarthy percebeu que
+aplicações de IA, tipicamente, precisam manipular <em>expressões
+simbólicas</em> e que para representar e processar tais dados no
+computador, a estrutura precisa ser dinâmica. E percebeu que listas
+encadeadas e dinâmicas (em oposição a <em>arrays</em> de natureza
+estática de Fortran) eram a estrutura de dados natural. Se isso parece
+<em>óbvio</em> no contexto atual, lembre-se que estamos falando de um
+tempo em que apenas a primeira linguagem de programação existia e a
+menos de um ano de seu lançamento. Não havia, à época, nenhuma linguagem
+de programação com conceitos de apontadores ou bibliotecas com listas
+encadeadas, nem quaisquer facilidades desse tipo. McCarthy não apenas
+percebeu a generalidade da estrutura de dados para essas aplicações como
+ainda a propõe como a estrutura de dados central de toda a linguagem de
+programação proposta.
+</section>
+<section>
+<h2 id="a-cara-de-código-lisp">A “cara” de código Lisp</h2>
+<p><my-slide src="slides.html#3" class="float-and-shrink-right"></my-slide></p>
+<p>Um dos aspectos mais marcantes de Lisp é sua sintaxe. A linguagem é
+marcada por um <em>aparente</em> uso exagerado de parênteses (além de
+que são usados de forma pouco convencional), por uma estranha ordem de
+operadores e operandos e pela falta de vírgulas ou pontos-e-vírgulas
+como separadores. Mas, o que pode parecer mero detalhe se revela, na
+verdade, como um dos aspectos mais importantes da linguagem. Razão pela
+qual é quase impossível deixar de reconhecer qualquer dialeto Lisp.</p>
+<p>Sugiro que você navegue pelos links abaixo, procurando entender as
+funções mais simples (ainda que não em detalhes, mas apenas vendo os
+nomes das funções e a organização geral do código). Os links levam ao
+GitHub da implementação de algumas bibliotecas de Clojure.</p>
+<ul>
+<li><a
+href="https://github.com/clojure/clojure/blob/master/src/clj/clojure/string.clj">String</a></li>
+<li><a
+href="https://github.com/clojure/clojure/blob/master/src/clj/clojure/math.clj">Math</a></li>
+<li><a
+href="https://github.com/clojure/clojure/tree/master/src/clj/clojure">Outros</a></li>
+</ul>
+<p>Antes de prosseguirmos, contudo, é importante ressaltar que Lisp não
+é exatamente <em>uma linguagem</em>, mas uma <a
+href="https://en.wikipedia.org/wiki/List_of_Lisp-family_programming_languages"
+target="_blank"><em>família de linguagens</em></a>. É que graças à
+simplicidade dos conceitos básicos que a definem, inúmeras linguagens
+semelhantes foram criadas e coexistem. Clojure é um dos chamados
+<em>dialetos Lisp</em>.</p>
+Vale ressaltar ainda que Clojure não é <em>apenas um dialeto</em>. É, de
+fato, um dos mais dialetos modernos da família e de maior sucesso na
+atualidade, com várias características únicas, como veremos. Nesta aula,
+contudo, focaremos nos aspectos gerais que se aplicam a praticamente
+qualquer outro dialeto Lisp, exceto por detalhes menores. Ao final da
+aula, você deve poder executar os exemplos que veremos em um REPL
+Clojure ou, com mínimos ajustes, no REPL de qualquer outro dialeto
+(Scheme, Common Lisp, Picolisp, Racket, Hy, etc).
+</section>
+<p><br></p>
+<div class="shadow">
+<p><my-slide src="slides.html#4"></my-slide></p>
+</div>
+<h2 id="expressões-simbólicas-ou-s-expressões">Expressões Simbólicas ou
+<em>s-expressões</em></h2>
+<p><my-slide src="slides.html#5"
+class="float-and-shrink-right"></my-slide> O principal conceito
+fundamental de Lisp é o de <em>expressões simbólicas</em> ou
+<em>s-expressões</em>, como são mais conhecidas. Normalmente, usamos o
+termo <em>expressão simbólica</em> para nos referirmos ao conceito mais
+abstrato e <em>s-expressão</em> para o conceito formal definido por
+Lisp. A ideia é que uma s-expressão é a unidade básica de expressão de
+um dado em Lisp. Uma s-expressão ou é um dado atômico (um elemento
+indivisível) ou uma <em>lista</em> (um dado composto). Em termos de
+linguagem, dificilmente a opção de McCarthy poderia ter sido mais
+simples e minimalista que isto.</p>
+<p>Átomos são escritos de acordo com regras léxicas convencionais para a
+escrita de números, strings (além de alguns mais específicos de Lisp que
+veremos adiante). E listas são escritas como sequências de elementos
+separadas por espaços e delimitadas por parênteses (é daqui que vêm os
+famosos parênteses de Lisp). Observe: não há vírgulas, nem qualquer
+outro elemento sintático. Só parênteses antes e depois da sequência de
+elementos e espaços para separá-los. Por fim, é importante observar que
+os elementos contidos nas listas podem ser, eles mesmos, s-expressões.
+Ou seja, a definição é recursiva.</p>
+<div class="shadow">
+<p><my-slide src="slides.html#8"></my-slide></p>
+</div>
+<h2 id="mas-como-expressar-código-em-lisp">Mas como expressar código em
+Lisp?</h2>
+<p><my-slide src="slides.html#9" class="float-and-shrink-right"></my-slide>
+Claramente, s-expressões nos permitem usar Lisp para expressar estrutura
+de dados complexas. Mas a questão é: como expressar operações ou
+comportamentos que manipulem esses dados? A resposta se baseia na
+observação, por parte de McCarthy, de que código é apenas uma forma
+especial de dado, mas ainda é apenas um dado. E que, como tal, pode ser
+representado, usando a mesma estrutura usada para os demais dados:
+s-expressões.</p>
+<p>Para isso, contudo, são necessárias algumas convenções para permitir
+que o interpretador saiba como processar essas operações.</p>
+<p><my-slide src="slides.html#12"
+class="float-and-shrink-left"></my-slide> A ideia de McCarthy foi basear
+a notação na chamada <a
+href="https://en.wikipedia.org/wiki/Polish_notation"
+target="_blank"><em>notação de prefixo</em></a> (ou polonesa ou ainda
+polonesa de Cambridge) para expressar operações e/ou comportamentos (a
+notação havia sido inventada anos antes em um contexto diferente;
+McCarthy apenas percebeu o quão apropriada a notação era para
+simplificar o processo de parsing). Na notação proposta, o primeiro
+elemento de uma lista é sempre um símbolo operacional que determina a
+operação que o programador quer executar; e os demais elementos são os
+argumentos da função.</p>
+<p>Observe que a notação tem várias propriedades interessantes:</p>
+<ol type="1">
+<li>graças à adição de parênteses, a notação é naturalmente flexível,
+permitindo que um número variável de argumentos seja suportado;</li>
+<li>garante uniformidade, minimizando o esforço necessário para o
+<em>parsing</em> da linguagem; de fato, as s-expressões de código são a
+própria linearização da árvore de sintaxe abstrata do código (tal como
+seria provido por um encaminhamento em pré-ordem);</li>
+<li>dá consistência à linguagem, garantindo que a linguagem acomoda
+facilmente a adição de novos elementos, sem afetar a análise sintática e
+a “cara” da linguagem; razão pela qual Lisp é frequentemente usada no
+estudo e projeto de linguagens de programação;</li>
+<li>combinada à natureza recursiva de s-expressões, a notação de prefixo
+se presta com facilidade ao aninhamento de expressões e, com isso,
+promove a composição de expressões complexas a partir de outras mais
+simples;</li>
+</ol>
+<h2 id="semântica">Semântica</h2>
+<p>A semântica de código Lisp é definida em termos de <em>avaliação de
+expressões</em>, de forma bastante semelhante ao processo de avaliação
+de expressões que aprendemos ainda no ensino fundamental. A ideia é que
+cada lista que representa código e que, portanto, está no formato acima
+descrito (a chamada notação polonesa) será avaliada, aplicando a função
+associada ao símbolo funcional aos argumentos que se seguem a ele na
+lista. Contudo, se uma lista contém sub-listas, por convenção, o
+interpretador Lisp irá sempre avaliar primeiro as listas que estão em
+posição de argumento antes. Esta forma de avaliação é conhecida como
+<em>ordem aplicativa de avaliação</em> (<em>applicative order
+evaluation</em>).</p>
+<div class="shadow">
+<p><my-slide src="slides.html#17"></my-slide></p>
+</div>
+<h2 id="formas-especiais">Formas especiais</h2>
+<p>Em Lisp, uma expressão que possa ser <em>executada</em> pelo
+interpretador, sem incorrer em erro, é chamada de <em>forma</em>.
+Observe que nem toda s-expressão é uma forma, já que várias delas podem
+resultar em erros.</p>
+<p>A forma vista acima, em que um símbolo funcional é usado na primeira
+posição (que, por sinal, é conhecida em Lisp como posição de função) e
+em que argumentos são usados nas demais posições é conhecida como
+<em>forma de aplicação de função</em>. O nome reflete o fato de que ao
+processar uma s-expressão nessa <em>forma</em>, o interpretador irá
+aplicar a função aos argumentos.</p>
+<p>Há, contudo, outras formas em Lisp que não são de natureza funcional
+e, portanto, não correspondem a aplicações de função. Abaixo apresento
+três das principais <em>formas especiais</em> de Lisp: <code>def</code>,
+<code>fn</code> e <code>defn</code>.</p>
+<p>A forma especial <code>def</code> é certamente o <a
+href="slides.html#18">mecanismo de abstração</a> mais básico
+proporcionado por Lisp. <my-slide src="slides.html#18"
+class="float-and-shrink-right"></my-slide>. Ele permite associar um
+símbolo a um valor na memória. Assim, a forma <code>(def a 123)</code>,
+por exemplo, faz o interpretador ligar o nome <code>a</code> ao valor
+<code>123</code>. A partir desse momento, sempre que fizermos referência
+ao símbolo <code>a</code>, o interpretador saberá que deve avaliar
+<code>a</code> como sendo o valor <code>123</code>.</p>
+<p><strong>Um pouco de teoria aqui</strong> Observe, contudo, que
+<code>def</code> não é de natureza funcional. Ele proporciona o que
+chamamos de <em>efeito colateral</em>, porque altera a memória. Mais
+adiante revisaremos o conceito de função, mas, por ora, apenas recorde
+que uma função é um mapeamento de elementos de um conjunto (o domínio)
+em outro (o contra-domínio). Quando avaliamos a forma
+<code>(+ 1 2)</code> esperamos que a avaliação da expressão produza
+<code>3</code> (ou que <em>retorne</em> 3, como diríamos em outras
+linguagens). Esse <code>3</code> é o valor do contra-domínio que está
+vinculado ao par de valores <code>1</code> e <code>2</code>, através do
+mapeamento caracterizado pela função <code>+</code>. Quando avaliamos
+<code>(def a 123)</code>, por outro lado, o fazemos <em>almejando efeito
+colateral</em> (a criação de um vínculo duradouro de <code>a</code> ao
+valor <code>123</code>) e não por qualquer valor que vá ser retornado
+pela avaliação da forma <code>(def a 123)</code>.</p>
+<h2 id="definição-de-funções">Definição de funções</h2>
+<p>E, finalmente, de posse dos conceitos de s-expressões, de formas e de
+formas especiais, posso apresentar como podemos definir funções em Lisp.
+Perceba que até o momento, vimos apenas como aplicar (usar) funções. Mas
+não vimos ainda como definir novas funções.</p>
+<p>Primeiro, relembre que a distinção entre código e dados foi
+significativamente enfraquecida. Para programar em Lisp, e em qualquer
+outra linguagem funcional, por sinal, compreender que funções são apenas
+um tipo de dado é essencial. Da mesma forma que listas, strings e
+números, <em>funções</em> são dados em Lisp. E justamente por ser mais
+um tipo de dado, a linguagem precisa proporcionar alguma forma de
+escrever <em>expressões</em> que descrevam funções. Mais uma vez,
+usaremos s-expressões e, em particular, usaremos uma nova <em>forma
+especial</em>: <code>fn</code> (em outros dialetos Lisp, é comum o uso
+do símbolo <code>lambda</code> para o mesmo fim). Esta forma especial
+permite escrever uma expressão que cria um objeto função. Atenção: isto
+apenas cria a função, mas não a nomeia. Por isso, estas funções são
+conhecidas como funções anônimas (ou <em>lambdas</em>, em homenagem ao
+lambda cálculo que as introduziu). O código abaixo, cria uma função que
+soma dois números.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode clojure"><code class="sourceCode clojure"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">fn</span> [x y] (<span class="kw">+</span> x y))</span></code></pre></div>
+<p><my-slide src="slides.html#19"
+class="float-and-shrink-right"></my-slide> Analisemos essa expressão
+detalhadamente. Primeiro, a expressão mais externa
+<code>(fn [x y] ...)</code> é a forma especial de criação de funções
+anônimas. O elemento <code>[x y]</code> é um vetor que lista os
+parâmetros formais da função (veremos vetores em mais detalhe mais
+adiante; por ora, apenas pense nele como sendo uma lista que usa
+colchetes ao invés de parênteses). E, por fim, temos o chamado <em>corpo
+da função</em> <code>(+ x y)</code> que é a expressão que será usada em
+uma eventual aplicação da função (feitas as devidas substiuições dos
+argumentos formais, claro). A expressão apenas define essa função, mas
+não há qualquer aplicação até o momento. Abaixo, contudo, a função é
+aplicada aos valores <code>1</code> e <code>2</code>.</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode clojure"><code class="sourceCode clojure"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>((<span class="kw">fn</span> [x y] (<span class="kw">+</span> x y)) <span class="dv">1</span> <span class="dv">2</span>)</span></code></pre></div>
+<p>Na expressão acima, usamos a forma especial <code>fn</code> para
+definir uma função e a aplicamos imediatamente aos valores 1 e 2. O
+valor a ser produzido pela avaliação dessa expressão acima é
+<code>3</code>. Vale a pena ver como se dá essa avaliação, contudo.</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode clojure"><code class="sourceCode clojure"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>((<span class="kw">fn</span> [x y] (<span class="kw">+</span> x y)) <span class="dv">1</span> <span class="dv">2</span>)   <span class="co">; =&gt; aplicação da função lambda</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>(<span class="kw">+</span> <span class="dv">1</span> <span class="dv">2</span>)                    <span class="co">; =&gt; aplicação da função +</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>                          <span class="co">; forma normal resultante</span></span></code></pre></div>
+<p>Embora seja uma forma especial, é importante perceber que a avaliação
+de uma expressão da forma <code>fn</code> produz (ou retorna) a
+<em>função criada</em> (ou uma referência para o objeto da função na
+memória, se você preferir).</p>
+<h3 id="combinando-def-e-fn-para-nomear-funções">Combinando
+<code>def</code> e <code>fn</code> para nomear funções</h3>
+<p>Claramente, é um pouco incômodo aplicar funções lambda da forma
+mostrada acima. Como falei, isso pode ser útil em algumas situações, mas
+o mais normal é que queiramos definir funções com nome e invocá-las a
+partir de seu nome. Observe, contudo, que você já tem tudo que precisa
+para isso. Basta combinar o efeito de <code>def</code> ao de
+<code>fn</code>. Veja a expressão abaixo e procure compreendê-la, com
+base no que já vimos da linguagem.</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode clojure"><code class="sourceCode clojure"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>(<span class="bu">def</span><span class="fu"> dobro </span>(<span class="kw">fn</span> [x] (<span class="kw">*</span> <span class="dv">2</span> x)))</span></code></pre></div>
+<p>A expressão mais externa <code>(def dobro ...)</code> usa a forma
+especial <code>def</code> para associar o símbolo <code>dobro</code> ao
+objeto produzido pelo elemento na terceira posição da mesma lista.
+Contudo, esse elemento é justamente a forma especial <code>fn</code>
+que, como mostrei antes, produz uma função na memória. Logo, o efeito
+líquido da avaliação da expressão acima é a criação da função na memória
+e sua vinculação ao símbolo <code>dobro</code>. Isso nos permite aplicar
+a função, usando o símbolo ao invés da expressão. Veja abaixo.</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode clojure"><code class="sourceCode clojure"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>(<span class="bu">def</span><span class="fu"> dobro </span>(<span class="kw">fn</span> [x] (<span class="kw">*</span> <span class="dv">2</span> x)))   <span class="co">; liga símbolo dobro à função </span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>(dobro (dobro <span class="dv">11</span>))             <span class="co">; =&gt; 44</span></span></code></pre></div>
+<p>A situação acima é tão comum que Lisp tem uma macro para reduzir o
+que precisamos digitar. O mesmo efeito e <code>def .. fn</code> é obtido
+usando apenas a <em>macro</em> <code>defn</code>, como mostrado
+abaixo.</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode clojure"><code class="sourceCode clojure"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>(<span class="bu">defn</span><span class="fu"> dobro </span>[x] (<span class="kw">*</span> <span class="dv">2</span> x))   <span class="co">; liga símbolo dobro à função </span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>(dobro (dobro <span class="dv">11</span>))         <span class="co">; =&gt; 44</span></span></code></pre></div>
+<blockquote>
+<p>Mais adiante no curso esturaremos melhor o conceito de macro. Por
+ora, basta saber que quando usamos <code>defn</code>, na prática,
+estaremos usando <code>def</code> da forma que fizemos acima. E que isso
+simplifica bastante a sintaxe.</p>
+</blockquote>
+<h2 id="resumo-dos-conceitos">Resumo dos conceitos</h2>
+<ul>
+<li>a sintaxe de Lisp é fundamentada em s-expressões</li>
+<li>s-expressões podem ser de dois tipos
+<ul>
+<li>atômicas, dados primitivos da linguagem</li>
+<li>listas, dados compostos a partir de outras s-expressões</li>
+</ul></li>
+<li>formas são s-expressões que podem ser executadas com sucesso
+<ul>
+<li>forma normal (o dado primitivo)</li>
+<li>forma de aplicação de função (código em notação de prefixo)</li>
+<li>formas especiais (adicionam sintaxe e semântica à linguagem)</li>
+</ul></li>
+</ul>
+<script>
+    let sections = document.querySelectorAll("section");
+    sections.forEach($section => {
+        let $title = $section.querySelector("h2");
+        $section._hidden_HTML = `
+            <h2 class="hidden">${$title.innerText}</h2>
+            <p>Seção suprimida. Clique no título para exibir.</p>`;
+
+        let toggle = () => {
+            console.log("toggling...");
+            let current_html = $section.innerHTML;
+            $section.innerHTML = $section._hidden_HTML;
+            $section._hidden_HTML = current_html;
+            let $title = $section.querySelector("h2");
+            $section.classList.toggle("hidden");
+            $title.addEventListener("click", toggle);
+        }
+
+        $title.addEventListener("click", toggle);
+    });
+</script>
+<style>
+
+section.hidden {
+  border: 1px solid gray;
+  padding: 0.5em;
+  border-radius: 10px;
+  background: #eeeefa;
+  margin-top: 4em;
+}
+
+section.hidden h2 {
+  color: gray;
+  margin: 0 0 0 0;
+}
+
+section.hidden p {
+  color: #aaa;
+  margin: 0 0 0 0;
+}
+</style>
+</body>
+</html>

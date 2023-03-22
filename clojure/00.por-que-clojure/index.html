@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Por que Clojure?!</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <script type="module" src="../js/componentes.js"></script>
+  <link rel="stylesheet" href="../css/texto.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="por-que-clojure">Por que Clojure?!</h1>
+<address class="author">
+<p>
+©2023 <a rel="author" href="https://daltonserey.github.io/">Dalton
+Serey</a><br> Computação @ UFCG
+</p>
+</address>
+<p><a href="slides.html" target="_blank">Slides da aula</a></p>
+<p><my-slide
+    src="slides.html#1"
+    class="float-and-shrink-right"> </my-slide> Estudar uma nova
+linguagem de programação sempre requer esforço cognitivo significativo.
+E, em geral, é siginificativo o suficiente para servir de entrave para o
+aprendizado. É que o cérebro gasta bastante energia para aprender uma
+nova linguagem e essa energia poderia ser direcionado pra outras coisas
+mais produtivas e interessantes. E é exatamente o que ocorre conosco, se
+não tivermos motivação o suficiente para aprender a nova linguagem. É
+por isso, que começo tentando responder e deixar claro pra mim o que
+espero obter desse processo de aprendizado.</p>
+<h2 id="faz-sentido-estudarmos-clojure">Faz sentido estudarmos
+Clojure?!</h2>
+<p><my-slide
+    src="slides.html#2"
+    class="float-and-shrink-right"> </my-slide> Esta pergunta é
+perfeitamente válida porque Clojure, nem de longe, está entre as
+linguagens mais populares da atualidade. Pelo <a
+href="https://www.tiobe.com/tiobe-index/">ranking de popularidade de
+linguagens da Tiobe</a>, Clojure está longe de ser listada entre as Top
+10. De fato, não está nem nas Top 50 (felizmente, aparece nas Top
+100!).</p>
+<p>E o motivo pode não ser só a popularidade. Uma leitura rápida sobre
+Clojure e você descobre que Clojure difere significativamente da maioria
+das linguagens modernas por descender de Lisp, uma linguagem antiga
+(criada em 1958!) com sintaxe estranha e foco em programação
+funcional.</p>
+<p>Como se não bastasse isso, não há nenhum outro grupo da UFCG (ao mens
+que eu conheça) que use Clojure. E isso significa que não há apoio da
+comunidade local. A cultura local privilegia Java e Python. E com essas
+duas linguagens, por que precisaríamos de algo mais?</p>
+<h2 id="ser-lisp-é-um-bom-motivo-em-si">Ser Lisp é um bom motivo em
+si!</h2>
+<p><my-slide
+    src="slides.html#3"
+    class="float-and-shrink-left"> </my-slide> A verdade, contudo, é que
+<em>ser baseada em lisp</em> é um bom motivo por si só. Talvez, o
+principal deles, se você pensar em termos de sua formação em ciência da
+computação.</p>
+<p>Lisp foi criada em 1958 por John McCarthy quando ainda estava no MIT
+(pouco depois se mudou para Stanford onde continuou o desenvolvimento de
+Lisp). O objetivo inicial de McCarthy era criar uma linguagem apropriada
+para a IA (termo que, por sinal, se atribui a ele desde o famoso
+<em>workshop de verão de 1956</em>). Para atender a esse propósito,
+acreditava ele, a linguagem deveria ser capaz de <em>processamento
+simbólico</em> mais que de <em>processamento numérico</em>. A base pra
+isso seria o uso de listas como forma de representação (ele se inspirou
+em outra linguagem chamada IPL).</p>
+<p><my-slide
+    src="slides.html#4"
+    class="float-and-shrink-right"> </my-slide> Lisp é, certamente, uma
+das 10 linguagens mais influentes de toda a história da programação e
+das linguagens de programação. Há autores que a colocam no que chamam
+das 4 linguagens mãe, junto com Fortran, Cobol e Algol. Tanto Python,
+como Java, C, C++, C#, Ruby e demais linguagens tipicamente estudadas
+mais amplamente são derivadas principalmente de Algol e Fortran, no que
+se refere a sintaxe e semântica. Mas, uma quantidade significativa de
+características tanto de Algol como de Fortran foram incorporadas a
+essas linguagens a partir de ideias originadas em Lisp. Com um detalhe:
+há ideias originadas em Lisp que só vieram achar seu caminho nas
+linguagens modernas nos últimos 10 ou 15 anos. Curiosamente, há ideias
+que ainda podem vir a ser incorporadas hoje.</p>
+<p>Dentre as várias ideias inicialmente implementadas (ou até mesmo
+concebidas) em Lisp antes de serem abraçadas por outras linguagens
+merecem destaque:</p>
+<dl>
+<dt><strong>Condicionais</strong></dt>
+<dd>
+Sim… Lisp foi a primeira linguagem a introduzir o agora onipresente
+<code>if &lt;condição&gt;..then..else</code>. Antes de Lisp, o que
+existia era um desvio condicional que permitia apenas redirecionar o
+fluxo de execução para uma linha dada cdo código (um <code>goto</code>,
+basicamente) com base no valor de uma posição de memória ou de algum
+registrador. Não havia o conceito de expressões lógicas e condicionais
+no sentido em que as usamos hoje.
+</dd>
+<dt><strong><em>Garbage collection</em></strong></dt>
+<dd>
+Quase toda linguagem moderna, em particular linguagens OO, usam
+algoritmos de <em>coleta de lixo</em> para gerenciar automaticamente os
+objetos alocados na memória. Lisp foi a primeira a propor um <em>garbage
+collector</em> e McCarthy é creditado como o inventor do mais antigo
+algoritmo para esse propósito: o famoso <em>mark and sweep</em>.
+</dd>
+<dt><strong>Estruturas de dados dinâmicas</strong></dt>
+<dd>
+Hoje assumimos que listas, árvores, conjuntos e mapas dinâmicos são as
+estruturas de dados básicos que qualquer linguagem de programação
+oferece. No início, contudo, apenas valores escalares (individuais) e
+<em>arrays</em> de tamanho fixo eram suportados pelas linguagens. Lisp
+foi a primeira linguagem a disseminar a importância do uso de estruturas
+dinâmicas para programar sistemas complexos. E isso é conseguido, usando
+apenas listas como a base de todas as estruturas dinâmicas. (A bem da
+verdade, é importante registrar que IPL, uma linguagem antiga tipo
+assembly, permitia uma forma primitiva de listas e foi a inspiração de
+McCarthy para Lisp).
+</dd>
+<dt><strong>Funções e recursividade</strong></dt>
+<dd>
+Desde a primeira versão, em 1958, As primeiras “<em>funções</em>”
+suportadas por linguagens de programação não eram funções propriamente
+ditas, capazes de receber argumentos e retornar um valor. Eram
+subrotinas (ou procedimentos) usados exclusivamente pelos efeitos
+colaterais produzidos. Lisp foi a primeira linguagem a suportar funções
+no sentido moderno, matemático do conceito, com suporte a argumentos e
+valor de retorno. Além disso, pela primeira vez a invocação de função
+passa a ser uma expressão e não um comando. Por fim, Lisp foi a primeira
+também a dar suporte a funções recursivas.
+</dd>
+<dt><strong>Funções de primeira classe e lambdas</strong></dt>
+<dd>
+Lisp também foi a primeira linguagem a suportar funções como entidades
+de primeira classe e o conceito de <em>lambdas</em> (ou funções
+anônimas) que são a base para suportar o que hoje se conhece como
+<em>programação funcional</em>.
+</dd>
+<dt><strong><em>Code as data</em></strong></dt>
+<dd>
+Lisp foi a primeira linguagem de programação <a
+href="https://en.wikipedia.org/wiki/Homoiconicity"><em>homoicônica</em></a>.
+Apesar do nome complicado, o conceito é (relativamente) simples: uma
+linguagem é dita <em>homoicônica</em> se a sintaxe usada para
+representar código na linguagem é a mesma usada pela linguagem para
+representar dados nessa linguagem. Suporte a <a
+href="https://en.wikipedia.org/wiki/Code_as_data">código como dados</a>
+garante que a linguagem reúne as condições básicas para manipular código
+escrito para ela própria, com a mesma facilidade com que manipula outros
+dados. Em Lisp, tanto código como dados são essencialmente representados
+como listas e escritos com a mesma sintaxe básica. Essa propriedade é a
+base para o que se chama de metaprogramação e programação de alta ordem.
+</dd>
+<dt><strong>REPL e código interpretado</strong></dt>
+<dd>
+Lisp é a linguagem que introduziu a cultura do REPL que se estende a
+muitas das linguagens modernas (tais como Python, Ruby, etc). A ideia de
+uma linguagem interativa com interpretação imediata do que o usuário
+digita em um REPL (<em>Read Eval Print Loop</em>) se tornou possível
+graças às ideias originais de especificação matemática da própria
+linguagem, feitas por McCarthy. Um estudante da equipe de McCarthy
+(ninguém menos que Steven Russel) percebeu que algumas das funções da
+especificação escritas elas próprias em Lisp poderiam ser implementadas
+em linguagem de máquina dando origem a um interpretador para a
+linguagem. Detalhe: McCarthy conta que disse que Russel estava
+confundindo teoria com prática, mas que Russel o ignorou e implementou o
+interpretador.
+</dd>
+<dt><strong>Tipagem dinâmica</strong></dt>
+<dd>
+Lisp foi a primeira linguagem de programação a suportar a tipagem
+dinâmica de variáveis. Ou seja, os tipos de dados associados com as
+variáveis não precisam ser definidos explicitamente pelo programador e
+são determinados em tempo de execução, de acordo com o tipo do valor
+efetivamente associado à variável quando o programa está em execução.
+</dd>
+<dt><strong>Suporte à metaprogramação</strong></dt>
+<dd>
+Pelos motivos mencionados acima, era até natural que Lisp evoluísse para
+proporcionar mecanismos de metaprogramação. Tal mecanismo, que recebe o
+nome de <em>macros</em> em Lisp, é, para alguns, uma das características
+mais importantes da linguagem, porque, na prática, combinado à sintaxe
+minimalista, permitem a <em>extensão</em> da linguagem. Lisp é
+frequentemente citada com uma das linguagens mais importantes no
+contexto das chamadas DSLs (<em>Domain Specific Languages</em>), dado
+que permite a criação de linguagens específicas para esses fins que
+compartilham da sintaxe básica de Lisp.
+</dd>
+<dt><strong>Outras</strong></dt>
+<dd>
+Ao longo dos anos, Lisp e seus inúmeros dialetos, têm sido a fonte de
+várias melhorias e avanços em linguagens de programação que depois se
+estenderam a outras linguagens. Algumas delas são: o conceito e a
+correta implementação de <em>escopo léxico</em>, o uso de
+<em>closures</em>, otimização de chamadas de cauda para recursividade
+eficiente (<em>tail call optimization</em>), dentre outras.
+</dd>
+</dl>
+<p>Conhecer e ser capaz de programar com a a linguagem que reúne tanto
+da história da programação e das linguagens de programação me parece ser
+fundamental para a formação de um bom profissional em computação. De
+fato, só este motivo já me parece mais que suficiente para aprender
+Clojure que, lembre, é um dialeto Lisp.</p>
+<div class="shadow">
+<p><my-slide src="slides.html?slides=5,6,7,8,9&tempo=4000#5"></my-slide></p>
+</div>
+<h2 id="mas-há-mais-motivos-pra-estudar-clojure">Mas há mais motivos pra
+estudar Clojure!</h2>
+<p><my-slide
+    src="slides.html#10"
+    class="float-and-shrink-right"> </my-slide> Até o momento só listei
+motivos para estudar Lisp, não Clojure propriamente dita. Isso pode
+fazer parecer que qualquer dialeto Lisp daria no mesmo. De fato, se o
+objetivo for apenas conhecer Lisp pelos motivos mais acadêmicos
+mencionados acima, sim, qualquer dialeto Lisp pode proporcionar
+resultados semelhantes. Contudo, há vários motivos para estudar Clojure,
+especificamente. Vamos a eles.</p>
+<ol type="1">
+<li><p>Clojure é, provavelmente, o dialeto Lisp mais moderno de Lisp e
+está em franca utilização hoje, (talvez dispute com Racket, mas
+desconfio que Clojure é maior).</p></li>
+<li><p>Clojure pode ser usada tanto de forma interpretada, através do
+REPL (a la Lisp clássico), como de forma compilada. Em ambos os casos, a
+linguagem é extremamente eficiente. Isso estimula o uso do REPL em
+ambientes de desenvolvimento, experimentação e <em>debugging</em> e o
+uso de versões compiladas para bytecodes em produção. (Clojure é, na
+verdade, sempre compilada).</p></li>
+<li><p>Clojure é uma linguagem <em>hospedada</em> pela JVM (Java Virtual
+Machine). Isso permite que Clojure combine a expressividade de Lisp à
+eficiência com que Java pode ser executada. Além disso, permite ainda a
+interoperatividade nativa com objetos Java. Código Clojure pode
+facilmente acessar objetos Java e vice versa.</p></li>
+<li><p>Clojure tem suporte nativo para concorrência e paralelismo. É
+fato conhecido que programar com funções puras, sem efeito colateral e
+com dados imutávies é base para um bom modelo de concorrência e execução
+paralela. Isso, contudo, raramente é, de fato, explorado por outros
+dialetos Lisp e até por outras linguagens de programação (funcionais ou
+não). Clojure explora exatamente isso e o fato de que a JVM proporciona
+excelente suporte para programação concorrente e execução paralela. Como
+resultado, Clojure provê excelentes mecanismos para programação
+concorrente construídos sobre essa base: estruturas de dados imutáveis e
+persistentes, suporte a threads, memória transacional em software,
+<em>futures</em>, agentes, atoms, programação assíncrona.</p></li>
+<li><p>Clojure tem uma comunidade forte e ativa que mantém um
+ecossistema inteiro de ferramentas e bibliotecas em praticamente todos
+os nichos imagináveis (IA, data science, estatística e gráficos, web,
+games, etc). Em particular, há ferramental que permite compilar Clojure
+para JavaScript, de forma que pode ser usada, inclusive, no frontend (<a
+href="https://clojurescript.org/">ClojureScript</a>). Além disso, há
+excelente e vasta documentação na forma de sites, cursos e
+livros.</p></li>
+</ol>
+<p><my-slide
+    src="slides.html#11"
+    class="float-and-shrink-right"> </my-slide> 6. E, por fim, há
+ofertas de empregos sendo ofertados na indústria para programadores
+Clojure. Sim! Várias empresas de ponta procuram desenvolvedores Clojure.
+Certamente, pode ser um bom diferencial ter alguma vivência em projetos
+com Clojure e Lisp em seu currículo.</p>
+<p>Concluindo… Estudar Clojure, hoje, me parece a melhor opção para
+qualquer estudante de computação que queira estudar Lisp. Clojure é uma
+versão viva e ativa da linguagem que, além de preservar os elementos
+fundamentais de Lisp, tem seu próprio brilho e importância. No pior dos
+casos, espero que este curso habilite e motive você a ler o famoso <a
+href="https://www.amazon.com/Structure-Interpretation-Computer-Programs-Engineering/dp/0262543230"
+target="_blank">SICP</a> (a respeito do assunto, sugiro que você leia o
+famoso <a href="https://www.amazon.com/review/R403HR4VL71K8/"
+target="_blank">review de Peter Norvig na Amazon, sobre o SICP</a>).</p>
+<p>Bom, espero que esta aula tenha convencido você de que este curso é
+uma excelente oportunidade de formação para você. Na próxima aula, já
+mergulhamos diretamente na linguagem. Dedique-se e tire o melhor
+proveito possível.</p>
+<div class="shadow">
+<p><my-slide src="slides.html#12"></my-slide></p>
+</div>
+</body>
+</html>

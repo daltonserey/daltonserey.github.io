@@ -1,0 +1,140 @@
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+:root {
+  --green: #91dc47;
+  --light-green: #ddffbd;
+  --dark-green: #62b132;
+  --blue: #5858d1;
+  --light-blue: #ccddff;
+  --dark-blue: rgb(56, 124, 146);
+
+}
+
+.nonum .remark-slide-number {
+  visibility: hidden;
+}
+
+.flex {
+    display: flex;
+}
+
+body {
+  font-family: 'Droid Serif';
+}
+.remark-slide-content p, .remark-slide-content li {
+  font-size: 22px;
+  line-height: 1.6;
+}
+h1, h2, h3, h4 {
+  font-family: 'Yanone Kaffeesatz';
+  font-weight: normal;
+}
+h4 {
+    margin-top: 1em;
+    margin-bottom: -0.3em;
+    font-size: 26px;
+}
+.nowrap {
+    white-space: nowrap;
+}
+.redbar {
+  border-left: 40px solid red;
+}
+.redbar2 {
+  border-left: 40px solid #f88;
+}
+.bluebar {
+  border-left: 40px solid var(--blue);
+}
+.greenbar {
+  border-left: 40px solid var(--dark-green);
+}
+.greenbar2 {
+  border-left: 40px solid lightgreen;
+}
+blockquote {
+  margin-inline-start: 0;
+  border: 1px solid gray;
+  border-radius: 10px;
+  background: var(--light-green);
+  padding: 0 1.2em 0 1.2em;
+  box-sizing: border-box;
+  line-height: 1.6;
+  width: 100%;
+}
+
+blockquote address {
+  text-align: right;
+}
+
+.sign {
+    float: right;
+    margin-right: 2em;
+    color: gray;
+    text-align: right;
+}
+
+.quote {
+  font-style: italic;
+  border-left: 10px var(--blue) solid;
+  padding-left: 20px;
+}
+.green {
+  color: #0099aa;
+}
+.annotate {
+  color: #aaa;
+  font-size: 80%;
+}
+.bgreen {
+  color: var(--dark-green);
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 120%;
+}
+.red {
+  color: red;
+}
+.bred {
+  color: red;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 120%;
+}
+.code {
+  background: #ccccff;
+  border-radius: 4px;
+}
+.blue {
+  color: var(--blue);
+}
+.bblue {
+  color: var(--blue);
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 120%;
+}
+.quote-green {
+  font-size: 120%;
+  font-style: italic;
+  border-left: 10px green solid;
+  padding-left: 20px;
+  line-height: 2.0;
+}
+.blueback {
+    background: var(--light-blue);
+}
+.greenback {
+    background: var(--light-green);
+}
+.remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+
+.quote p {
+  line-height: 1.6;
+}
+
+ul, ol {
+  line-height: 2.0;
+}
