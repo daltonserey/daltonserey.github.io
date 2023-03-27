@@ -14,3 +14,5 @@ Computação @ UFCG</p>
 - [Curso rápido de vim (slides)](http://www.dsc.ufcg.edu.br/~dalton/vim)
 - [Python em 60 minutos (slides)](/curso-p1/1.1-python-em-60-minutos){target=_blank}
 - [Python e Pip (slides/roteiro)](/curso-p1/1.2-python-e-pip){target=_blank}
+- [Tipos e Operações Primitivas (slides)](/curso-p1/1.2-tipos-e-operacoes-primitivas/)
+- [Ints e Floats (slides)](/curso-p1/1.2-ints_e_floats/)
