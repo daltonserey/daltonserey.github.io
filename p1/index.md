@@ -16,3 +16,4 @@ Computação @ UFCG</p>
 - [Python e Pip (slides/roteiro)](/curso-p1/1.2-python-e-pip){target=_blank}
 - [Tipos e Operações Primitivas (slides)](/curso-p1/1.2-tipos-e-operacoes-primitivas/)
 - [Ints e Floats (slides)](/curso-p1/1.2-ints_e_floats/)
+- [Repositórios, Git e GitHub (slides/roteiro)](/curso-p1/1.3-git-e-github/)
